@@ -17,8 +17,28 @@
       </div>
 
       <!-- Input fields for width and height -->
-  
-
+      <div class="row mb-3">
+        <div class="col">
+          <label for="videoWidth" class="form-label">Width</label>
+          <input
+            type="number"
+            id="videoWidth"
+            class="form-control"
+            v-model.number="width"
+            placeholder="640"
+          />
+        </div>
+        <div class="col">
+          <label for="videoHeight" class="form-label">Height</label>
+          <input
+            type="number"
+            id="videoHeight"
+            class="form-control"
+            v-model.number="height"
+            placeholder="360"
+          />
+        </div>
+      </div>
 
       <!-- Error message display -->
       <div v-if="error" class="alert alert-danger">
@@ -26,12 +46,14 @@
       </div>
 
       <!-- Embed video component -->
-       <div class="wd">
-      <EmbediaVue 
+      <EmbediaVue
         :clip="videoClip"
+        :width="width"
+        :height="height"
+        :cssname="'embed-clip'"
         v-if="validUrl"
       />
-    </div>
+
       <hr />
 
       <footer>
@@ -52,8 +74,8 @@ export default {
   data() {
     return {
       videoClip: '', // URL for the video
-      width: '640', // Default width
-      height: '360', // Default height
+      width: 640, // Default width
+      height: 360, // Default height
       error: null, // Error state
     };
   },
@@ -77,11 +99,8 @@ export default {
 </script>
 
 <style scoped>
-.wd {
-  margin: auto;
-  width: 640px;
-  max-width: 680px;
-
+.embed-clip {
+  float: right;
+  border: 2px solid green;
 }
-
 </style>
