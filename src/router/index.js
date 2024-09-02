@@ -15,7 +15,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory('/embedia-vue-docs/'),  // Set the base URL here
   routes,
 });
 
