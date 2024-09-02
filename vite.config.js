@@ -9,5 +9,5 @@ import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
   plugins: [vue()],
-  base: '/embedia-vue-docs',
+  base: '/embedia-vue-docs/',
 });
