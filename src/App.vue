@@ -1,15 +1,21 @@
 <template>
   <div id="app" class="d-flex">
     <!-- Sidebar -->
-    <nav id="sidebar" class="bg-light p-3 border-end" style="width: 250px;">
+    <nav id="sidebar" class="bg-light p-3 border-end mt-5" style="width: 240px;">
       <!-- Sidebar toggle button for smaller screens -->
-      <button class="btn btn-primary d-md-none mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-expanded="false" aria-controls="sidebarMenu">
+      <button class="btn btn-primary d-md-none mb-3" type="button" @click="toggleSidebar">
         <span class="material-icons">menu</span> <!-- Material UI menu icon -->
       </button>
       
       <!-- Collapsible sidebar content -->
       <div class="collapse d-md-block" id="sidebarMenu">
         <ul class="nav flex-column">
+          <!-- Logo -->
+          <div class="text-center mb-4">
+            <router-link class="nav-link" to="/"><img src="/embediavuelogo.png" alt="Logo" style="width: 110px;"></router-link>
+            <h5>Embedia Vue</h5>
+            <hr>
+          </div>
           <li class="nav-item">
             <router-link class="nav-link" to="/">Home</router-link>
           </li>
@@ -18,38 +24,43 @@
           </li>
           <li class="nav-item">
             <button class="btn btn-link nav-link d-flex justify-content-between align-items-center" type="button" @click="toggleCollapse('servicesMenu')">
-              Services
+              Embed Websites
               <span class="material-icons">expand_more</span> <!-- Material UI expand icon -->
             </button>
             <div class="collapse" id="servicesMenu">
               <ul class="nav flex-column ms-3">
                 <li class="nav-item">
-                  <router-link class="nav-link" to="/services/design">Design</router-link>
+                  <router-link class="nav-link" to="/embed-websites/facebook">Facebook</router-link>
                 </li>
                 <li class="nav-item">
-                  <router-link class="nav-link" to="/services/development">Development</router-link>
+                  <router-link class="nav-link" to="/embed-websites/instagram">Instagram</router-link>
+                </li>
+                <li class="nav-item">
+                  <router-link class="nav-link" to="/embed-websites/youtube">Youtube</router-link>
+                </li>
+                <li class="nav-item">
+                  <router-link class="nav-link" to="/embed-websites/youtube-shorts">Youtube Shorts</router-link>
+                </li>
+                <li class="nav-item">
+                  <router-link class="nav-link" to="/embed-websites/twitter">Twitter / X</router-link>
+                </li>
+                <li class="nav-item">
+                  <router-link class="nav-link" to="/embed-websites/tiktok">TikTok</router-link>
+                </li>
+                <li class="nav-item">
+                  <router-link class="nav-link" to="/embed-websites/vimeo">Vimeo</router-link>
+                </li>
+                <li class="nav-item">
+                  <router-link class="nav-link" to="/embed-websites/dailymotion">Dailymotion</router-link>
                 </li>
               </ul>
             </div>
           </li>
+        
+          <br>
+          <hr>
           <li class="nav-item">
-            <button class="btn btn-link nav-link d-flex justify-content-between align-items-center" type="button" @click="toggleCollapse('portfolioMenu')">
-              Portfolio
-              <span class="material-icons">expand_more</span> <!-- Material UI expand icon -->
-            </button>
-            <div class="collapse" id="portfolioMenu">
-              <ul class="nav flex-column ms-3">
-                <li class="nav-item">
-                  <router-link class="nav-link" to="/portfolio/websites">Websites</router-link>
-                </li>
-                <li class="nav-item">
-                  <router-link class="nav-link" to="/portfolio/apps">Apps</router-link>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <router-link class="nav-link" to="/contact">Contact</router-link>
+            <div class="nav-link" to="/contact">Copyright &copy {{ currentYear }}</div>
           </li>
         </ul>
       </div>
@@ -63,13 +74,14 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 import { Collapse } from 'bootstrap';
 
 export default {
   name: 'App',
   setup() {
     const currentOpenMenu = ref(null);
+    let sidebarMenu = null;
 
     const toggleCollapse = (menuId) => {
       const submenu = document.getElementById(menuId);
@@ -96,8 +108,26 @@ export default {
       }
     };
 
+    const toggleSidebar = () => {
+      const bsCollapse = new Collapse(sidebarMenu, {
+        toggle: false
+      });
+      if (sidebarMenu.classList.contains('show')) {
+        bsCollapse.hide();
+      } else {
+        bsCollapse.show();
+      }
+    };
+
+    onMounted(() => {
+      sidebarMenu = document.getElementById('sidebarMenu');
+    });
+
+    const currentYear = computed(() => new Date().getFullYear());
     return {
-      toggleCollapse
+      toggleCollapse,
+      toggleSidebar,
+      currentYear
     };
   }
 }
@@ -154,5 +184,19 @@ export default {
 /* Custom icon styles */
 .material-icons {
   font-size: 24px; /* Adjust icon size */
+}
+
+/* Ensure the toggle button is fixed at the top */
+.btn-primary.d-md-none.mb-3 {
+  position: fixed;
+  top: 10px; /* Adjust as needed */
+  left: 10px; /* Adjust as needed */
+  z-index: 1050; /* Ensure it stays above other elements */
+  height: 40px; /* Fixed height */
+  width: 40px; /* Fixed width */
+  padding: 0; /* Remove padding */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>

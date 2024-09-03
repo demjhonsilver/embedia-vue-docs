@@ -2,36 +2,53 @@
   <div>
     <div id="main-content" class="flex-fill p-3">
       <h1>Welcome to Embedia Vue</h1>
-      <p>Documentation</p>
-
-      <!-- Input field for the video link -->
       <div class="mb-3">
         <label for="videoLink" class="form-label">Video Link</label>
-        <input
-          type="text"
-          id="videoLink"
-          class="form-control"
-          v-model="videoClip"
-          placeholder="YouTube, Shorts, Facebook, Reels, Twitter, TikTok, Instagram"
-        />
+            <input
+              type="text"
+              id="videoLink"
+              class="form-control"
+              v-model="videoClip"
+              placeholder="YouTube, Shorts, Facebook, Reels, Twitter, TikTok, Instagram"
+            />
       </div>
 
-      <!-- Input fields for width and height -->
-  
+      <!-- Tricard layout -->
+      <div class="d-flex justify-content-around">
+        <!-- Card 1: Video Link -->
+        <div class="card" style="width: 70%; text-align: center;">
+          <div class="card-body">
+            <!-- Embed video component -->
+            <div class="wd mt-3" :style="{ width: width + 'px', height: height + 'px' }">
+              <EmbediaVue 
+                ref="embediaVueComponent"
+                :clip="videoClip"
+                v-if="validUrl"
+              />
+            </div>
+          </div>
+        </div>
 
+        <!-- Card 2: Width -->
+        <div class="card" style="width: 20%; text-align: left;">
+          <div class="card-body">
+            <label for="width" class="form-label">Width</label>
+            <input
+              type="number"
+              id="width"
+              class="form-control"
+              v-model="width"
+              placeholder="Enter width"
+            />
+          </div>
+        </div>
+      </div>
 
       <!-- Error message display -->
-      <div v-if="error" class="alert alert-danger">
+      <div v-if="error" class="alert alert-danger mt-3">
         {{ error }}
       </div>
 
-      <!-- Embed video component -->
-       <div class="wd">
-      <EmbediaVue 
-        :clip="videoClip"
-        v-if="validUrl"
-      />
-    </div>
       <hr />
 
       <footer>
@@ -52,36 +69,32 @@ export default {
   data() {
     return {
       videoClip: '', // URL for the video
-      width: '640', // Default width
-      height: '360', // Default height
+      width: '', // reactive width
+      height: '', // reactive height
       error: null, // Error state
+      tempVideoClip: '', // Temporary storage for new URL
     };
   },
   computed: {
     validUrl() {
       // Basic URL validation, enhance if needed
-      return this.videoClip.startsWith('http://') || this.videoClip.startsWith('https://');
+      return this.tempVideoClip.startsWith('http://') || this.tempVideoClip.startsWith('https://');
     }
   },
   watch: {
     videoClip(newUrl) {
-      // Validate URL when it changes
-      if (!this.validUrl) {
-        this.error = 'Please enter a valid video URL.';
-      } else {
-        this.error = null;
-      }
+      // Clear the URL first before loading new one
+      this.tempVideoClip = '';
+      setTimeout(() => {
+        this.tempVideoClip = newUrl;
+      }, 100); // Delay to ensure re-render
     }
   }
 };
 </script>
-
 <style scoped>
 .wd {
   margin: auto;
-  width: 640px;
   max-width: 680px;
-
 }
-
 </style>
