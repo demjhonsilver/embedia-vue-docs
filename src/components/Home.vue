@@ -3,7 +3,7 @@
     <div id="main-content" class="flex-fill p-3">
       <h1>Welcome to Embedia Vue</h1>
       <div class="mb-3">
-        <label for="videoLink" class="form-label">Video Link</label>
+        <label for="videoLink" class="form-label">Paste link here:</label>
             <input
               type="text"
               id="videoLink"
