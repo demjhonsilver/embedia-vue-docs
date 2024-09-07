@@ -10,10 +10,22 @@
      Embedia Vue - YouTube
     </div>
     <div class="card-body">
-      <blockquote class="blockquote mb-0">
-        <p>Embedia Vue is an embed package for Vue which can embed from platforms like Facebook, Instagram, TikTok, YouTube/Shorts, Twitter/X, Vimeo and Dailymotion.</p>
-       
-      </blockquote>
+      <h4>Paradigm Links:</h4>
+    <blockquote class="blockquote mt-5">
+      <footer class="footer">
+
+        https://www.youtube.com/watch?v=xxxxxxxxxxx
+<br>
+
+https://youtube.com/watch?v=xxxxxxxxxxx
+<br>
+https:/m.youtube.com/watch?v=xxxxxxxxxxx
+
+
+
+   </footer>
+      
+    </blockquote>
     </div>
   </div>
   

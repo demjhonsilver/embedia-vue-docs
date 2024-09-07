@@ -14,6 +14,7 @@
           <div class="text-center mb-4">
             <router-link class="nav-link" to="/"><img src="/embediavuelogo.png" alt="Logo" style="width: 110px;"></router-link>
             <h5>Embedia Vue</h5>
+            <p>v 1.1.1</p>
             <hr>
           </div>
           <li class="nav-item">
@@ -56,6 +57,15 @@
               </ul>
             </div>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/demjhonsilver/embedia-vue" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.npmjs.com/package/embedia-vue" target="_blank" rel="noopener noreferrer">NPM package</a>
+          </li>
+
+
         
           <br>
           <hr>
