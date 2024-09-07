@@ -47,14 +47,13 @@ https://vimeo.com/xxxxxxxxx
       
           <footer class="blockquote-footer">filename: <cite title="Source Title">Example.vue</cite></footer>
         </blockquote>
+        
       </div>
     </div>
   
   
   
-  
-  
-  
+
   
   
   

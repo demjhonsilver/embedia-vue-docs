@@ -72,6 +72,9 @@
           <li class="nav-item">
             <div class="nav-link" to="/contact">Copyright &copy {{ currentYear }}</div>
           </li>
+          <li class="nav-item">
+            <div class="nav-link" to="/contact"><cite title="created">by: Demjhon Silver</cite></div>
+          </li>
         </ul>
       </div>
     </nav>

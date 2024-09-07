@@ -12,7 +12,7 @@
   <div class="card-body">
     <blockquote class="blockquote mb-0">
       <p>Embedia Vue is an embed package for Vue which can embed from platforms like Facebook, Instagram, TikTok, YouTube/Shorts, Twitter/X, Vimeo and Dailymotion.</p>
-      <br><footer class="blockquote-footer">Created by: <cite title="Source Title">Demjhon Silver</cite></footer>
+      
     </blockquote>
   </div>
 </div>
