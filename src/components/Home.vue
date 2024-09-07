@@ -4,26 +4,28 @@
       <h1>Welcome to Embedia Vue</h1>
       <div class="mb-3">
         <label for="videoLink" class="form-label">Paste link here:</label>
-            <input
-              type="text"
-              id="videoLink"
-              class="form-control"
-              v-model="videoClip"
-              placeholder="YouTube, Shorts, Facebook, Reels, Twitter, TikTok, Instagram"
-            />
+        <input
+          type="text"
+          id="videoLink"
+          class="form-control"
+          v-model="videoClip"
+          placeholder="YouTube, Shorts, Facebook, Reels, Twitter, TikTok, Instagram"
+        />
       </div>
 
       <!-- Tricard layout -->
       <div class="d-flex justify-content-around">
         <!-- Card 1: Video Link -->
-        <div class="card" style="width: 70%; text-align: center;">
+        <div class="card" style="width: 77%; text-align: center;">
           <div class="card-body">
             <!-- Embed video component -->
             <div class="wd mt-3" :style="{ width: width + 'px', height: height + 'px' }">
               <EmbediaVue 
                 ref="embediaVueComponent"
                 :clip="videoClip"
-                v-if="validUrl"
+                v-if="videoClip"
+                cssname="embed-clip"
+                :fullscreen="true"
               />
             </div>
           </div>
@@ -44,10 +46,7 @@
         </div>
       </div>
 
-      <!-- Error message display -->
-      <div v-if="error" class="alert alert-danger mt-3">
-        {{ error }}
-      </div>
+
 
       <hr />
 
@@ -71,30 +70,20 @@ export default {
       videoClip: '', // URL for the video
       width: '', // reactive width
       height: '', // reactive height
-      error: null, // Error state
-      tempVideoClip: '', // Temporary storage for new URL
     };
-  },
-  computed: {
-    validUrl() {
-      // Basic URL validation, enhance if needed
-      return this.tempVideoClip.startsWith('http://') || this.tempVideoClip.startsWith('https://');
-    }
-  },
-  watch: {
-    videoClip(newUrl) {
-      // Clear the URL first before loading new one
-      this.tempVideoClip = '';
-      setTimeout(() => {
-        this.tempVideoClip = newUrl;
-      }, 100); // Delay to ensure re-render
-    }
   }
 };
 </script>
+
 <style scoped>
 .wd {
   margin: auto;
-  max-width: 680px;
+  position: relative;
+  display: flex;
+  max-width: 900px; /* Set maximum width */
+}
+
+.embed-clip {
+  float: left;
 }
 </style>
