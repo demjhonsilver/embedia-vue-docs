@@ -16,7 +16,7 @@
       <!-- Tricard layout -->
       <div class="d-flex justify-content-around">
         <!-- Card 1: Video Link -->
-        <div class="card" style="width: 70%; text-align: center;">
+        <div class="card" style="width: 77%; text-align: center;">
           <div class="card-body">
             <!-- Embed video component -->
             <div class="wd mt-3" :style="{ width: width + 'px', height: height + 'px' }">
