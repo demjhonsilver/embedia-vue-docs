@@ -14,7 +14,11 @@
     <blockquote class="blockquote mt-5">
       <footer class="footer">
 
-        https://youtube.com/shorts/xxxxxxxxxxx
+        https://www.youtube.com/shorts/xxxxxxxxxxx
+<br>
+https://www.youtube.com/shorts/xxxxxxxxxxx?si=xxxxxxxxxxxxxxxx
+<br>
+https://youtube.com/shorts/xxxxxxxxxxx
 <br>
 https://youtube.com/shorts/xxxxxxxxxxx?si=xxxxxxxxxxxxxxxx
 
