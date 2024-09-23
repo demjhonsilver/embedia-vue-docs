@@ -14,7 +14,7 @@
           <div class="text-center mb-4">
             <router-link class="nav-link" to="/"><img src="/embediavuelogo.png" alt="Logo" style="width: 110px;"></router-link>
             <h5>Embedia Vue</h5>
-            <p>v 1.1.1</p>
+            <p>v 1.1.2</p>
             <hr>
           </div>
           <li class="nav-item">
@@ -70,11 +70,12 @@
           <br>
           <hr>
           <li class="nav-item">
-            <div class="nav-link" to="/contact">Copyright &copy {{ currentYear }}</div>
-          </li>
-          <li class="nav-item">
             <div class="nav-link" to="/contact"><cite title="created">by: Demjhon Silver</cite></div>
           </li>
+          <li class="nav-item">
+            <div class="nav-link" to="/contact">Copyright &copy {{ currentYear }}</div>
+          </li>
+        
         </ul>
       </div>
     </nav>
