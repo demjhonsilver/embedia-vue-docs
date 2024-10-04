@@ -9,7 +9,7 @@
           id="videoLink"
           class="form-control"
           v-model="videoClip"
-          placeholder="YouTube, Shorts, Facebook, Reels, Twitter, TikTok, Instagram"
+          placeholder="YouTube, Shorts, Facebook, Reels, Twitter, TikTok, Instagram, Vimeo and Dailymotion"
         />
       </div>
 
@@ -24,6 +24,7 @@
                 ref="embediaVueComponent"
                 :clip="tempVideoClip" 
                 :fullscreen="true"
+                :autoplay="false"
                 v-if="tempVideoClip"
               />
             </div>
@@ -59,33 +60,23 @@
   </div>
 </template>
 
-<script>
+<script setup>
+import { ref, watch } from 'vue';
 import { EmbediaVue } from 'embedia-vue';
 
-export default {
-  name: 'ExampleComponent',
-  components: {
-    EmbediaVue
-  },
-  data() {
-    return {
-      videoClip: '', // URL for the video
-      width: '', // reactive width
-      height: '', // reactive height
-      error: null, // Error state
-      tempVideoClip: '', // Temporary storage for new URL
-    };
-  },
-  watch: {
-    videoClip(newUrl) {
-      // Clear the URL first before loading new one
-      this.tempVideoClip = '';
-      setTimeout(() => {
-        this.tempVideoClip = newUrl;
-      }, 100); // Delay to ensure re-render
-    }
-  }
-};
+const videoClip = ref(''); // URL for the video
+const width = ref(''); // Reactive width
+const height = ref(''); // Reactive height
+const error = ref(null); // Error state
+const tempVideoClip = ref(''); // Temporary storage for new URL
+
+watch(videoClip, (newUrl) => {
+  // Clear the URL first before loading new one
+  tempVideoClip.value = '';
+  setTimeout(() => {
+    tempVideoClip.value = newUrl;
+  }, 100); // Delay to ensure re-render
+});
 </script>
 
 <style scoped>
