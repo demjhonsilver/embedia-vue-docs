@@ -2,6 +2,7 @@
   <div>
     <div id="main-content" class="flex-fill p-9" style="min-width: 400px; max-width: 1100px;">
       <h2>Twitter / X</h2>
+      
       <div class="mb-3"></div>
 
       <div class="card" style="width: 90%">
@@ -26,7 +27,7 @@
 
       <div class="card mt-2" style="width: 90%">
         <div class="card-header">
-          Twitter / X - Embed Syntax
+          Twitter / X - Embed Syntax / Max Width is 380px
         </div>
         <div class="card-body">
           <blockquote class="blockquote mb-0">
@@ -34,7 +35,6 @@
 &lt;EmbediaVue
     clip=""
     width=""
-    height=""
     cssname=""
 /&gt;
             </code></pre>

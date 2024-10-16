@@ -9,7 +9,7 @@
           id="videoLink"
           class="form-control"
           v-model="videoClip"
-          placeholder="YouTube, Shorts, Facebook, Reels, Twitter, TikTok, Instagram, Vimeo and Dailymotion"
+          placeholder="YouTube, Shorts, Facebook, Reels, X, TikTok, Instagram, Vimeo and Dailymotion"
         />
       </div>
 

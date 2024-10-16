@@ -14,7 +14,7 @@
           <div class="text-center mb-4">
             <router-link class="nav-link" to="/"><img src="/embediavuelogo.png" alt="Logo" style="width: 110px;"></router-link>
             <h5>Embedia Vue</h5>
-            <p>v 1.1.3</p>
+            <p>v 1.2.0</p>
             <hr>
           </div>
           <li class="nav-item">
