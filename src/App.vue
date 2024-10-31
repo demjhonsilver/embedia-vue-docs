@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="d-flex">
     <!-- Sidebar -->
-    <nav id="sidebar" class="bg-light p-3 border-end mt-5" style="width: 240px;">
+    <nav id="sidebar" class="bg-light p-3 border-end" style="width: 240px;">
       <!-- Sidebar toggle button for smaller screens -->
       <button class="btn btn-primary d-md-none mb-3" type="button" @click="toggleSidebar">
         <span class="material-icons">menu</span> <!-- Material UI menu icon -->
