@@ -17,6 +17,11 @@
               https://www.facebook.com/watch/?v=xxxxxxxxxxxxxxxxx
               <br>
               https://www.facebook.com/reel/xxxxxxxxxxxxxxxxx
+              <br>
+              <hr>
+              You can also embed it for live streaming on Facebook.
+         
+              <br>
             </footer>
           </blockquote>
         </div>
