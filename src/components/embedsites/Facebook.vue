@@ -13,6 +13,10 @@
           <blockquote class="blockquote mt-5">
             <footer class="footer">
               https://www.facebook.com/username/videos/xxxxxxxxxxxxxxxxx
+              <br>
+              https://www.facebook.com/watch/?v=xxxxxxxxxxxxxxxxx
+              <br>
+              https://www.facebook.com/reel/xxxxxxxxxxxxxxxxx
             </footer>
           </blockquote>
         </div>
