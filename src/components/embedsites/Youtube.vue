@@ -19,7 +19,7 @@
               https://m.youtube.com/watch?v=xxxxxxxxxxx
               <br>
               <hr>
-              You can also embed it for live streaming on YouTube.
+           
             </footer>
           </blockquote>
         </div>

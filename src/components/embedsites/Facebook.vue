@@ -19,8 +19,6 @@
               https://www.facebook.com/reel/xxxxxxxxxxxxxxxxx
               <br>
               <hr>
-              You can also embed it for live streaming on Facebook.
-         
               <br>
             </footer>
           </blockquote>
