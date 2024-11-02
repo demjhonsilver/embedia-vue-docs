@@ -17,9 +17,6 @@
               https://youtube.com/watch?v=xxxxxxxxxxx
               <br>
               https://m.youtube.com/watch?v=xxxxxxxxxxx
-              <br>
-              <hr>
-           
             </footer>
           </blockquote>
         </div>

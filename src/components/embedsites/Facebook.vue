@@ -17,9 +17,7 @@
               https://www.facebook.com/watch/?v=xxxxxxxxxxxxxxxxx
               <br>
               https://www.facebook.com/reel/xxxxxxxxxxxxxxxxx
-              <br>
-              <hr>
-              <br>
+
             </footer>
           </blockquote>
         </div>
