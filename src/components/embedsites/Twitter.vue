@@ -27,7 +27,7 @@
 
       <div class="card mt-2" style="width: 90%">
         <div class="card-header">
-          Twitter / X - Embed Syntax / Max Width is 380px
+          Twitter / X - Embed Syntax
         </div>
         <div class="card-body">
           <blockquote class="blockquote mb-0">
@@ -35,13 +35,29 @@
 &lt;EmbediaVue
     clip=""
     width=""
-    cssname=""
+    cssname="embed-clip"
 /&gt;
             </code></pre>
             <footer class="blockquote-footer">
               filename: <cite title="Source Title">Example.vue</cite>
             </footer>
           </blockquote>
+
+<hr>
+<p>CSS code:</p>
+<blockquote class="blockquote mb-0">
+            <pre><code>
+.embed-clip {
+    padding: 10px;
+    max-width: 300px !important;
+}
+            </code></pre>
+            <footer class="blockquote-footer">
+              <cite title="Source Title">The video will automatically resize.</cite>
+            </footer>
+          </blockquote>
+
+
         </div>
       </div>
     </div>
